@@ -1,7 +1,7 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "",  
+  "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +14,13 @@
   "bugs": {
     "url": "https://github.com/Mcelest19/myFlix-client/issues"
   },
-  "homepage": "https://github.com/Mcelest19/myFlix-client#readme"
+  "homepage": "https://github.com/Mcelest19/myFlix-client#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "process": "^0.11.10"
+  }
 }
