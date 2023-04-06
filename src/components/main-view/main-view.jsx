@@ -14,9 +14,8 @@ export const MainView = () => {
         const MoviesFromApi = data.map((movie) => {
           const obj = {id: movie._id, 
                       title: movie.Title, 
-                      image: movie.imageUrl,
-                      director: movie.Director.Name, 
                       genre: movie.Genre.Name,
+                      director: movie.Director.Name,                      
                       description: movie.Description}
           return obj;          
         });
