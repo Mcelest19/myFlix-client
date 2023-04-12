@@ -13,9 +13,7 @@ export const MainView = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
-    if (!token) {
-      return;
-    }
+    if (!token) return;    
 
     fetch("https://movie-api-gas8.onrender.com/movies", {
       headers: { Authorization: `Bearer ${token}` }

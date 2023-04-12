@@ -1,3 +1,5 @@
+"use strict";
+
 import { useState } from "react";
 
 export const LoginView = ({ onLoggedIn }) => {
@@ -15,12 +17,13 @@ export const LoginView = ({ onLoggedIn }) => {
     fetch("https://movie-api-gas8.onrender.com/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
-      },
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
+        },
       body: JSON.stringify(data)
-    })
-      .then((response) => response.json())
-      .then((data) => {
+    }).then((response) => response.json()).then((data) => {
         if (data.user) {
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("token", data.token);
@@ -28,8 +31,7 @@ export const LoginView = ({ onLoggedIn }) => {
         } else {
           alert("No such user");
         }
-      })
-      .catch((e) => {
+      }).catch((e) => {
         console.log(e);
         alert("Something went wrong");
       });
