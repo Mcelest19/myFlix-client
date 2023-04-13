@@ -27,7 +27,9 @@ export const MainView = () => {
             title: movie.Title,
             director: movie.Director.Name,
             genre: movie.Genre.Name,
-            description: movie.Description
+            description: movie.Description,
+            image: movie.Image,
+            year_release: movie.Year_release
           };
           return obj;
         });
