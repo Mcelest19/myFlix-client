@@ -43,6 +43,7 @@ export const ProfileView = ({ user, movies }) => {
           console.log(e);
           })
       };
+
       const removeFavoriteMovie = () => {        
         fetch(`https://movie-api-gas8.onrender.com/users/${user.UserName}/favorites/${movie.id}`,
           {

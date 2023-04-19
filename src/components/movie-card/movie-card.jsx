@@ -10,13 +10,11 @@ export const MovieCard = ({ movie }) => {
     // .find method checks if there is a movie in the users Favorite Movies array by id
     const alreadyFavorite = user.FavoriteMovies.find(id => id === movie.id);
 
-    // useState checks the returned value of alreadyFavorite, if a value is returned "true", if not "false"
-    //console.log ("Favorite ?", alreadyFavorite);
     const [favorite, setFavorite] = useState(alreadyFavorite? true : false);
   
     //console.log(favorite);
     const toggleFavorite = () => {
-      // if token is undefined/empty, the return statement stops the execution of the function
+      
       if (!token) return;
   
       const url = `https://movie-api-gas8.onrender.com/users/${user.UserName}/movies/${movie.id}`;
@@ -39,12 +37,8 @@ export const MovieCard = ({ movie }) => {
       // return data
       fetch(url, requestOptions)
         .then((response) => response.json())
-        .then((data) => {
-          //setFavorite = (!alreadyFavorite);
-          //console.log ("data", data);
-          //console.log("user post favorite clic", user);
-          localStorage.setItem('user', JSON.stringify(data)); // sets new movie data to the user's local storage
-          //window.location.reload(false);
+        .then((data) => {         
+          localStorage.setItem('user', JSON.stringify(data)); 
         })
         .catch((e) => {
           alert('Something went wrong');
