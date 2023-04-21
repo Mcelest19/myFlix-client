@@ -27172,9 +27172,9 @@ var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) try {
-        storedUser = JSON.parse(storedUser);
+    const storedstoredUser = localStorage.getItem("user");
+    if (storedstoredUser) try {
+        storedUser = JSON.parse(storedstoredUser);
     } catch (e) {}
     const storedToken = localStorage.getItem("token");
     const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
