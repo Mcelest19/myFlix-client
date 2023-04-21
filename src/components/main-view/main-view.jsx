@@ -20,6 +20,7 @@ export const MainView = () => {
   const [user, setUser] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);  
+  const [viewMovies, setViewMovies] = useState(movies);
   
 
   useEffect(() => {
@@ -47,13 +48,22 @@ export const MainView = () => {
       });
   }, [token]);
 
+  useEffect(() => {
+    setViewMovies(movies);
+}, [movies]);
+
   return (
     <BrowserRouter>
       <NavigationBar
         user={user}
         onLoggedOut={() => {
           setUser(null);
+          setToken(null);
+          localStorage.clear();
         }}
+        onSearch={(query) => {
+          setViewMovies(movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase())));
+      }}
       />
       <Row className="justify-content-md-center">
         <Routes>
@@ -121,7 +131,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
+                    {viewMovies.map((movie) => (
                       <Col className="mb-4" key={movie.id} md={3}>
                         <MovieCard movie={movie} user={user} token={token} />
                       </Col>
