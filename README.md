@@ -71,7 +71,6 @@ Build a movie client-side app with React as Front-End and using a REST API as Ba
 ● Ability to select a movie for more details
 ● Ability to log out
 ● Ability to navigate to Profile view
-Page 2
 Single Movie view
 ● Returns data (description, genre, director, image) about a single movie to the user
 ● Allows users to add a movie to their list of favorites
@@ -93,7 +92,7 @@ Profile view
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://github.com/Mcelest19/myFlix-client)
+- [Live Demo Link](https://famous-otter-8efa34.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
