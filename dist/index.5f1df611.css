@@ -1918,7 +1918,11 @@ progress {
   border-top-width: 0;
 }
 
+<<<<<<< Updated upstream
 .table-striped > tbody > tr:nth-of-type(odd) > *, .table-striped-columns > :not(caption) > tr > :nth-child(2n) {
+=======
+.table-striped > tbody > tr:nth-of-type(2n+1) > *, .table-striped-columns > :not(caption) > tr > :nth-child(2n) {
+>>>>>>> Stashed changes
   --bs-table-accent-bg: var(--bs-table-striped-bg);
   color: var(--bs-table-striped-color);
 }
