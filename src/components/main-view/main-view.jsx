@@ -10,10 +10,10 @@ import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {  
-  const storedstoredUser = localStorage.getItem("user");
-  if (storedstoredUser) {
+  const storedUser = localStorage.getItem("user");
+  if (storedUser) {
     try {
-      storedUser = JSON.parse(storedstoredUser);
+      storedUser = JSON.parse(storedUser);
   } catch (e) {}
   }; 
   const storedToken = localStorage.getItem("token");
