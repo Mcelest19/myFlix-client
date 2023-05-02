@@ -9,15 +9,13 @@ import { ProfileView} from "../profile-view/profile-view";
 import { Row, Col } from "react-bootstrap";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-export const MainView = () => {  
+export const MainView = () => {
+
+  const [user, setUser] = useState(() => {
   const storedUser = localStorage.getItem("user");
-  if (storedUser) {
-    try {
-      storedUser = JSON.parse(storedUser);
-  } catch (e) {}
-  }; 
-  const storedToken = localStorage.getItem("token");
-  const [user, setUser] = useState(storedUser ? storedUser : null);
+  return storedUser ? JSON.parse(storedUser) : null;
+  });
+  const storedToken = localStorage.getItem("token");  
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);  
   const [viewMovies, setViewMovies] = useState(movies);
