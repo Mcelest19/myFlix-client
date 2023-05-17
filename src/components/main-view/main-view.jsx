@@ -11,11 +11,14 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
 
-  const [user, setUser] = useState(() => {
   const storedUser = localStorage.getItem("user");
-  return storedUser ? JSON.parse(storedUser) : null;
-  });
-  const storedToken = localStorage.getItem("token");  
+  if (storedUser) {
+    try {
+      storedUser = JSON.parse(storedUser);
+  } catch (e) {}
+  }; 
+  const storedToken = localStorage.getItem("token");
+  const [user, setUser] = useState(storedUser ? storedUser : null);   
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);  
   const [viewMovies, setViewMovies] = useState(movies);
